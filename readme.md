@@ -22,7 +22,7 @@
 - 📊 **Strong Results**: Outperforms previous RAG methods on widely-used benchmarks.
 
 <p align="center">
-  <img src="figure/main_figure.png" width="80%" alt="Framework Overview">
+  <img src="figure/main_figure.png" width="95%" alt="Framework Overview">
 </p>
 
 ---
