@@ -9,8 +9,7 @@ import warnings
 from src.evaluate import Evaluator
 from src.utils import LLM_Model
 from src.utils import setup_logging
-os.environ["CUDA_VISIBLE_DEVICES"] = "5"
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 warnings.filterwarnings('ignore')
 
 def parse_arguments():
@@ -23,7 +22,7 @@ def parse_arguments():
     return parser.parse_args()
 
 
-def load_dataset(dataset_name,tokenizer): 
+def load_dataset(dataset_name): 
     questions_path = f"dataset/{dataset_name}/questions.json"
     with open(questions_path, "r", encoding="utf-8") as f:
         questions = json.load(f)
