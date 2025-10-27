@@ -1,4 +1,4 @@
-# 🌟 **LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora**  
+# 🌟 **LinearRAG: Linear Graph Retrieval-Augmented Generation on Large-scale Corpora**  
 
 > A lightweight GraphRAG framework that eliminates LLM token cost during graph construction – making GraphRAG faster and more efficient than ever.
 
