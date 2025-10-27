@@ -17,18 +17,20 @@
 ---
 
 ## 🚀 **Highlights**
-- ✅ **Relation-free Graph Construction**: Eliminates unstable relation extraction, using only lightweight entity recognition to graph.
-- 🔥 **Zero Token Consumption**: Complete graph construction and retrieval without any LLM calls.
-- 📊 **Strong Results**: Outperforms previous RAG methods on widely-used benchmarks.
-
+- ✅ **Context-Preserving**: A relation-free graph construction paradigm, relying on lightweight entity recognition and semantic linking to achieve comprehensive contextual comprehension. 
+- ✅ **Complex Reasoning**: Enables deep retrieval via semantic bridging, achieving multi-hop reasoning in a single retrieval pass without requiring an explicit relational graph.
+- ✅ **High Scalability**: Zero LLM token consumption, faster processing speed, and linear time/space complexity.
+  
 <p align="center">
   <img src="figure/main_figure.png" width="95%" alt="Framework Overview">
 </p>
 
 ---
 ## 🎉 **News**
-- [2025-10-26] We have released the code and [dataset](https://huggingface.co/datasets/Zly0523/linear-rag).
-- [2025-10-11] We have released the paper on [Arxiv](https://arxiv.org/abs/2510.10114).
+- **[2025-10-27]** We release **[LinearRAG](https://github.com/DEEP-PolyU/LinearRAG)**, a relation-free graph construction method for efficient GraphRAG.
+- **[2025-06-06]** We release **[GraphRAG-Bench](https://github.com/GraphRAG-Bench/GraphRAG-Benchmark.git)**, the benchmark for evaluating GraphRAG models.
+- **[2025-01-21]** We release the [GraphRAG survey](https://github.com/DEEP-PolyU/Awesome-GraphRAG).
+
 
 ---
 
