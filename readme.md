@@ -1,4 +1,4 @@
-# 🌟 **LinearRAG: Linear Graph Retrieval-Augmented Generation on Large-scale Corpora**  
+# **LinearRAG: Linear Graph Retrieval-Augmented Generation on Large-scale Corpora**  
 
 > A lightweight GraphRAG framework that eliminates LLM token cost during graph construction – making GraphRAG faster and more efficient than ever.
 
@@ -24,6 +24,11 @@
 <p align="center">
   <img src="figure/main_figure.png" width="95%" alt="Framework Overview">
 </p>
+
+---
+## 🎉 **News**
+- [2025-10-26] We have released the code and [dataset](https://huggingface.co/datasets/Zly0523/linear-rag).
+- [2025-10-11] We have released the paper on [Arxiv](https://arxiv.org/abs/2510.10114).
 
 ---
 
