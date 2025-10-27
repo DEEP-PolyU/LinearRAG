@@ -1,4 +1,4 @@
-# 🌟 **LinearRAG**  
+# 🌟 **LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora**  
 
 > A lightweight GraphRAG framework that eliminates LLM token cost during graph construction – making GraphRAG faster and more efficient than ever.
 
@@ -17,7 +17,7 @@
 ---
 
 ## 🚀 **Highlights**
-- ✅ **Fact-Level Faithfulness**: Eliminates unstable relation extraction, using only lightweight entity recognition to graph.
+- ✅ **Relation-free Graph Construction**: Eliminates unstable relation extraction, using only lightweight entity recognition to graph.
 - 🔥 **Zero Token Consumption**: Complete graph construction and retrieval without any LLM calls.
 - 📊 **Strong Results**: Outperforms previous RAG methods on widely-used benchmarks.
 
