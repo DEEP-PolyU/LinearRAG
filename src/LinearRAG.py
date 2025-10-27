@@ -12,7 +12,6 @@ import igraph as ig
 import re
 import logging
 logger = logging.getLogger(__name__)
-
 class LinearRAG:
     def __init__(self, global_config):
         self.config = global_config
