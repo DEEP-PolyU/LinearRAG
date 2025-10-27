@@ -1,6 +1,6 @@
 # **LinearRAG: Linear Graph Retrieval-Augmented Generation on Large-scale Corpora**  
 
-> A lightweight GraphRAG framework that eliminates LLM token cost during graph construction – making GraphRAG faster and more efficient than ever.
+> A relation-free graph construction method for efficient GraphRAG. It eliminates LLM token costs during graph construction, making GraphRAG faster and more efficient than ever.
 
 <p align="center">
   <a href="https://arxiv.org/abs/2510.10114" target="_blank">
