@@ -17,7 +17,7 @@
 ---
 
 ## 🚀 **Highlights**
-- ✅ **Context-Preserving**: A relation-free graph construction paradigm, relying on lightweight entity recognition and semantic linking to achieve comprehensive contextual comprehension. 
+- ✅ **Context-Preserving**: Relation-free graph construction, relying on lightweight entity recognition and semantic linking to achieve comprehensive contextual comprehension. 
 - ✅ **Complex Reasoning**: Enables deep retrieval via semantic bridging, achieving multi-hop reasoning in a single retrieval pass without requiring explicit relational graphs.
 - ✅ **High Scalability**: Zero LLM token consumption, faster processing speed, and linear time/space complexity.
   
