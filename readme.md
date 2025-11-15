@@ -82,7 +82,7 @@ model/all-mpnet-base-v2/
 
 ```bash
 SPACY_MODEL="en_core_web_trf"
-EMBEDDING_MODEL="model/bge-large-en-v1.5"
+EMBEDDING_MODEL="model/all-mpnet-base-v2"
 DATASET_NAME="2wikimultihop"
 LLM_MODEL="gpt-4o-mini"
 MAX_WORKERS=16
