@@ -17,8 +17,8 @@
 ---
 
 ## 🚀 **Highlights**
-- ✅ **Context-Preserving**: A relation-free graph construction paradigm, relying on lightweight entity recognition and semantic linking to achieve comprehensive contextual comprehension. 
-- ✅ **Complex Reasoning**: Enables deep retrieval via semantic bridging, achieving multi-hop reasoning in a single retrieval pass without requiring an explicit relational graph.
+- ✅ **Context-Preserving**: Relation-free graph construction, relying on lightweight entity recognition and semantic linking to achieve comprehensive contextual comprehension. 
+- ✅ **Complex Reasoning**: Enables deep retrieval via semantic bridging, achieving multi-hop reasoning in a single retrieval pass without requiring explicit relational graphs.
 - ✅ **High Scalability**: Zero LLM token consumption, faster processing speed, and linear time/space complexity.
   
 <p align="center">
@@ -29,7 +29,7 @@
 ## 🎉 **News**
 - **[2025-10-27]** We release **[LinearRAG](https://github.com/DEEP-PolyU/LinearRAG)**, a relation-free graph construction method for efficient GraphRAG.
 - **[2025-06-06]** We release **[GraphRAG-Bench](https://github.com/GraphRAG-Bench/GraphRAG-Benchmark.git)**, the benchmark for evaluating GraphRAG models.
-- **[2025-01-21]** We release the [GraphRAG survey](https://github.com/DEEP-PolyU/Awesome-GraphRAG).
+- **[2025-01-21]** We release the **[GraphRAG survey](https://github.com/DEEP-PolyU/Awesome-GraphRAG)**.
 
 ---
 
