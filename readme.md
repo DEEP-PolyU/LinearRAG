@@ -78,6 +78,7 @@ Make sure the embedding model is available at:
 model/all-mpnet-base-v2/
 ```
 
+
 ### 2️⃣ Quick Start Example
 
 ```bash
