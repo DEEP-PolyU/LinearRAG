@@ -6,10 +6,10 @@ cd /mnt/data/lyzhuang/linear-rag
 # DATASET="medical"
 # LLM_MODEL="gpt-4o-mini"
 # MAX_WORKERS=16
-# MAX_ITERATION=4
+# MAX_ITERATION=3
 # PASSAGE_RATIO=1.5
 # THRESHOLD=0.5
-# TOP_K_SENTENCE=2
+# TOP_K_SENTENCE=1
 
 # musique
 # SPACY_MODEL="en_core_web_trf"
