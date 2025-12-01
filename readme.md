@@ -115,6 +115,8 @@ python run.py \
 
 ![framework](figure/efficiency_result.png)
 
+![framework](figure/efficiency_result.png)
+
 **Efficiency and performance comparison.**
 
 </div>
@@ -132,7 +134,7 @@ If you find this work helpful, please consider citing us:
 }
 ```
 
-This project is licensed under the GNU General Public License v3.0 ([License](LICENSE.TXT)))
+This project is licensed under the GNU General Public License v3.0 ([License](LICENSE.TXT)).
 
 ## 📬 Contact
 
