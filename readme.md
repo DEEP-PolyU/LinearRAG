@@ -1,4 +1,4 @@
-# **LinearRAG: Linear Graph Retrieval-Augmented Generation on Large-scale Corpora**  
+# **LinearRAG: Linear Graph Retrieval-Augmented Generation on Large-scale Corpora**
 
 > A relation-free graph construction method for efficient GraphRAG. It eliminates LLM token costs during graph construction, making GraphRAG faster and more efficient than ever.
 
@@ -17,16 +17,19 @@
 ---
 
 ## 🚀 **Highlights**
-- ✅ **Context-Preserving**: Relation-free graph construction, relying on lightweight entity recognition and semantic linking to achieve comprehensive contextual comprehension. 
+
+- ✅ **Context-Preserving**: Relation-free graph construction, relying on lightweight entity recognition and semantic linking to achieve comprehensive contextual comprehension.
 - ✅ **Complex Reasoning**: Enables deep retrieval via semantic bridging, achieving multi-hop reasoning in a single retrieval pass without requiring explicit relational graphs.
 - ✅ **High Scalability**: Zero LLM token consumption, faster processing speed, and linear time/space complexity.
-  
+
 <p align="center">
   <img src="figure/main_figure.png" width="95%" alt="Framework Overview">
 </p>
 
 ---
+
 ## 🎉 **News**
+
 - **[2025-10-27]** We release **[LinearRAG](https://github.com/DEEP-PolyU/LinearRAG)**, a relation-free graph construction method for efficient GraphRAG.
 - **[2025-06-06]** We release **[GraphRAG-Bench](https://github.com/GraphRAG-Bench/GraphRAG-Benchmark.git)**, the benchmark for evaluating GraphRAG models.
 - **[2025-01-21]** We release the **[GraphRAG survey](https://github.com/DEEP-PolyU/Awesome-GraphRAG)**.
@@ -35,7 +38,7 @@
 
 ## 🛠️ **Usage**
 
-### 1️⃣ Install Dependencies  
+### 1️⃣ Install Dependencies
 
 **Step 1: Install Python packages**
 
@@ -50,6 +53,7 @@ python -m spacy download en_core_web_trf
 ```
 
 > **Note:** For the `medical` dataset, you need to install the scientific/biomedical Spacy model:
+
 ```bash
 pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.3/en_core_sci_scibert-0.5.3.tar.gz
 ```
@@ -78,7 +82,6 @@ Make sure the embedding model is available at:
 model/all-mpnet-base-v2/
 ```
 
-
 ### 2️⃣ Quick Start Example
 
 ```bash
@@ -102,17 +105,24 @@ python run.py \
 <img src="figure/generation_results.png" alt="framework" width="1000">
 
 **Main results of end-to-end performance**
+
 </div>
 <div align="center">
 <img src="figure/efficiency_result.png" alt="framework" width="1000">
 
-**Efficiency and performance comparison.**
-</div>
 
+
+
+![framework](figure/efficiency_result.png)
+
+**Efficiency and performance comparison.**
+
+</div>
 
 ## 📖 Citation
 
 If you find this work helpful, please consider citing us:
+
 ```bibtex
 @article{zhuang2025linearrag,
   title={LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora},
@@ -121,5 +131,9 @@ If you find this work helpful, please consider citing us:
   year={2025}
 }
 ```
+
+This project is licensed under the GNU General Public License v3.0 ([License](LICENSE.TXT)))
+
 ## 📬 Contact
+
 ✉️ Email: zhuangluyao523@gmail.com
