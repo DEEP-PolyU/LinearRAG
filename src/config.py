@@ -18,3 +18,4 @@ class LinearRAGConfig:
     passage_node_weight: float = 0.05
     damping: float = 0.5
     iteration_threshold: float = 0.5
+    use_vectorized_retrieval: bool = False  # True for vectorized matrix computation, False for BFS iteration

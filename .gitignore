@@ -1,0 +1,16 @@
+
+results/
+.env
+.venv
+dataset/
+import/
+model/
+scripts/
+
+.DS_Store
+
+# all pycache files, including those in subdirectories
+__pycache__/
+*/__pycache__/
+
+

@@ -48,6 +48,7 @@ class Evaluator:
             return 1
         else:
             return 0
+            
     def evaluate_sig_sample(self,idx,prediction):
         pre_answer = prediction["pred_answer"]
         gold_ans = prediction["gold_answer"]
