@@ -93,8 +93,8 @@ python run.py \
     --embedding_model ${EMBEDDING_MODEL} \
     --dataset_name ${DATASET_NAME} \
     --llm_model ${LLM_MODEL} \
-    --max_workers ${MAX_WORKERS}
-    --use_vectorized_retrieval # optional, use vectorized matrix-based retrieval for GPU acceleration if Strong GPU is available, otherwise use BFS iteration.
+    --max_workers ${MAX_WORKERS} 
+    # --use_vectorized_retrieval # optional, use vectorized matrix-based retrieval for GPU acceleration if Strong GPU is available, otherwise use BFS iteration.
 ```
 
 ## 🎯 **Performance**
