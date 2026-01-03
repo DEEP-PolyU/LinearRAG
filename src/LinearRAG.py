@@ -557,17 +557,30 @@ class LinearRAG:
         ]
 
     def add_edges(self):
-        edges = []
-        weights = []
+        existing_edges = set()
+        for edge in self.graph.es:
+            source_name = self.graph.vs[edge.source]["name"]
+            target_name = self.graph.vs[edge.target]["name"]
+            existing_edges.add(frozenset([source_name, target_name]))
+        
+        new_edges = []
+        new_weights = []
         
         for node_hash_id, node_to_node_stats in self.node_to_node_stats.items():
             for neighbor_hash_id, weight in node_to_node_stats.items():
                 if node_hash_id == neighbor_hash_id:
                     continue
-                edges.append((node_hash_id, neighbor_hash_id))
-                weights.append(weight)
-        self.graph.add_edges(edges)
-        self.graph.es['weight'] = weights
+                edge_key = frozenset([node_hash_id, neighbor_hash_id])
+                if edge_key not in existing_edges:
+                    new_edges.append((node_hash_id, neighbor_hash_id))
+                    new_weights.append(weight)
+                    existing_edges.add(edge_key)
+        
+        if new_edges:
+            self.graph.add_edges(new_edges)
+            start_idx = len(self.graph.es) - len(new_edges)
+            for i, weight in enumerate(new_weights):
+                self.graph.es[start_idx + i]['weight'] = weight
 
     def add_entity_to_passage_edges(self, passage_hash_id_to_entities):
         passage_to_entity_count ={} 
