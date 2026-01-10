@@ -27,7 +27,7 @@ class SpacyNER:
         sentence_to_entities = defaultdict(list)
         unique_entities = set()
         passage_hash_id_to_entities = {}
-        pdb.set_trace()
+        # pdb.set_trace()  # 注释掉调试断点
         for ent in doc.ents:
             if ent.label_ == "ORDINAL" or ent.label_ == "CARDINAL":
                 continue
