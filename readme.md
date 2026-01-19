@@ -67,7 +67,7 @@ Download the datasets from HuggingFace and place them in the `dataset/` folder:
 
 ```bash
 git clone https://huggingface.co/datasets/Zly0523/linear-rag
-cp -r linear-rag/dataset/* dataset/
+cp -r linear-rag/* dataset/
 ```
 
 **Step 5: Prepare Embedding Model**
