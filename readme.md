@@ -112,7 +112,7 @@ python run.py \
 </div>
 
 
-## 📖 Citation
+## 📬 Citation
 
 If you find this work helpful, please consider citing us:
 ```bibtex
@@ -122,6 +122,4 @@ If you find this work helpful, please consider citing us:
   journal={arXiv preprint arXiv:2510.10114},
   year={2025}
 }
-```
-## 📬 Contact
-✉️ Email: zhuangluyao523@gmail.com
+``` 
