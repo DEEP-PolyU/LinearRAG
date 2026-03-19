@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from src.utils import LLM_Model
 @dataclass
 class LinearRAGConfig:
@@ -19,9 +19,3 @@ class LinearRAGConfig:
     damping: float = 0.5
     iteration_threshold: float = 0.5
     use_vectorized_retrieval: bool = False  # True for vectorized matrix computation, False for BFS iteration
-    enable_hybrid_attribute_fallback: bool = False
-    attribute_keyword_boost: float = 0.25
-    attribute_query_keywords: list[str] = field(default_factory=lambda: [
-        "born", "birth", "where", "when", "located", "location", "founded", "founder",
-        "died", "death", "nationality", "capital", "date", "year"
-    ])

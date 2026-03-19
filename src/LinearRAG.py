@@ -110,7 +110,7 @@ class LinearRAG:
             question_embedding = self.config.embedding_model.encode(question,normalize_embeddings=True,show_progress_bar=False,batch_size=self.config.batch_size)
             seed_entity_indices,seed_entities,seed_entity_hash_ids,seed_entity_scores = self.get_seed_entities(question)
             if len(seed_entities) != 0:
-                sorted_passage_hash_ids,sorted_passage_scores = self.graph_search_with_seed_entities(question,question_embedding,seed_entity_indices,seed_entities,seed_entity_hash_ids,seed_entity_scores)
+                sorted_passage_hash_ids,sorted_passage_scores = self.graph_search_with_seed_entities(question_embedding,seed_entity_indices,seed_entities,seed_entity_hash_ids,seed_entity_scores)
                 final_passage_hash_ids = sorted_passage_hash_ids[:self.config.retrieval_top_k]
                 final_passage_scores = sorted_passage_scores[:self.config.retrieval_top_k]
                 final_passages = [self.passage_embedding_store.hash_id_to_text[passage_hash_id] for passage_hash_id in final_passage_hash_ids]
@@ -183,12 +183,12 @@ class LinearRAG:
                 (num_sentences, num_entities), device=self.device
             )
             
-    def graph_search_with_seed_entities(self, question, question_embedding, seed_entity_indices, seed_entities, seed_entity_hash_ids, seed_entity_scores):
+    def graph_search_with_seed_entities(self, question_embedding, seed_entity_indices, seed_entities, seed_entity_hash_ids, seed_entity_scores):
         if self.config.use_vectorized_retrieval:
             entity_weights, actived_entities = self.calculate_entity_scores_vectorized(question_embedding,seed_entity_indices,seed_entities,seed_entity_hash_ids,seed_entity_scores)
         else:
             entity_weights, actived_entities = self.calculate_entity_scores(question_embedding,seed_entity_indices,seed_entities,seed_entity_hash_ids,seed_entity_scores)
-        passage_weights = self.calculate_passage_scores(question, question_embedding, actived_entities)
+        passage_weights = self.calculate_passage_scores(question_embedding,actived_entities)
         node_weights = entity_weights + passage_weights
         ppr_sorted_passage_indices,ppr_sorted_passage_scores = self.run_ppr(node_weights)
         return ppr_sorted_passage_indices,ppr_sorted_passage_scores
@@ -478,16 +478,10 @@ class LinearRAG:
         
         return entity_weights, actived_entities
 
-    def calculate_passage_scores(self, question, question_embedding, actived_entities):
+    def calculate_passage_scores(self, question_embedding, actived_entities):
         passage_weights = np.zeros(len(self.graph.vs["name"]))
         dpr_passage_indices, dpr_passage_scores = self.dense_passage_retrieval(question_embedding)
         dpr_passage_scores = min_max_normalize(dpr_passage_scores)
-        apply_attribute_boost = (
-            self.config.enable_hybrid_attribute_fallback
-            and self._is_attribute_query(question)
-        )
-        question_lower = question.lower()
-
         for i, dpr_passage_index in enumerate(dpr_passage_indices):
             total_entity_bonus = 0
             passage_hash_id = self.passage_embedding_store.hash_ids[dpr_passage_index]
@@ -500,14 +494,7 @@ class LinearRAG:
                     denom = tier if tier >= 1 else 1
                     entity_bonus = entity_score * math.log(1 + entity_occurrences) / denom
                     total_entity_bonus += entity_bonus
-
             passage_score = self.config.passage_ratio * dpr_passage_score + math.log(1 + total_entity_bonus)
-
-            if apply_attribute_boost:
-                overlap = self._attribute_keyword_overlap(question_lower, passage_text_lower)
-                if overlap > 0:
-                    passage_score += self.config.attribute_keyword_boost * math.log(1 + overlap)
-
             passage_node_idx = self.node_name_to_vertex_idx[passage_hash_id]
             passage_weights[passage_node_idx] = passage_score * self.config.passage_node_weight
         return passage_weights
@@ -518,17 +505,6 @@ class LinearRAG:
         sorted_passage_indices = np.argsort(question_passage_similarities)[::-1]
         sorted_passage_scores = question_passage_similarities[sorted_passage_indices].tolist()
         return sorted_passage_indices, sorted_passage_scores
-
-    def _is_attribute_query(self, question):
-        tokens = set(re.findall(r"\w+", question.lower()))
-        return any(keyword in tokens for keyword in self.config.attribute_query_keywords)
-
-    def _attribute_keyword_overlap(self, question_lower, passage_text_lower):
-        overlap = 0
-        for keyword in self.config.attribute_query_keywords:
-            if keyword in question_lower and keyword in passage_text_lower:
-                overlap += 1
-        return overlap
     
     def get_seed_entities(self, question):
         question_entities = list(self.spacy_ner.question_ner(question))
