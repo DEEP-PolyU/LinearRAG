@@ -43,6 +43,7 @@
 
 ```bash
 pip install -r requirements.txt
+(Use Python 3.9 preferably)
 ```
 
 **Step 2: Download Spacy language model**
